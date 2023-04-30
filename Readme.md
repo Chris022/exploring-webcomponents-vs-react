@@ -9,3 +9,11 @@ Im Zuge eines anderen Projektes muss ich mich zwischen React und Webcomponents e
 
 ## Setup
 ### React
+Um eine React app aufzusetzen muss zuerst node und npm installiert sein. Anschließend kann die node app "create-react-app" verwendet werden.
+```bash
+npx create-react-app todo-app
+```
+
+### Webcomponents
+TODO
+
