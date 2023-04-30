@@ -1,0 +1,17 @@
+.button{
+    background-color: #282c34;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 10px 15px 10px 15px;
+    text-transform: uppercase;
+}
+
+.button:hover{
+    background-color: #454c5b;
+}
+
+.button:active{
+    scale: 0.95;
+}

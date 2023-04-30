@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import Heading from './components/heading/Heading';
+
+import Card from './components/card/Card';
+import Button from './components/button/Button';
+
+import Todo from './components/todo/Todo';
+import Spacer from './components/spacer/Spacer';
+
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Heading text="ToDo - React"></Heading>
+      <Card>
+        <Todo text="I am a Text way to long to fit into a single line. bla bla bla bla" done={false}></Todo>
+        <Spacer />
+        <Button text="Add ToDo"></Button>
+      </Card>
     </div>
   );
 }
