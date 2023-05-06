@@ -58,3 +58,22 @@ Letzterer kann genutzt werden um bestimmten code Auszuführen sobald sich eine s
 
 ### Webcomponents
 Die Webcomponents API gibt keine art von logic vor! Es bietet sich aber an, über standart Js Events zu kommunizieren! Theoretisch ist es aber auch ohne weiteres möglich keine Library wie BaconJS zu verwenden um reactive Variablen gemeinsam mit Webcomponents zu verwenden
+
+## Vergleich
+### Speicher
+#### React
+Das React Projekt ist 260 MB groß, wovon 551.1 kB beim aufrufen der App an den Browser gesendet werden.
+#### Webcomponents
+Das Projekt ist 26.3 kB groß, wovon 26.3 kB beim aufrufen der App an den Browser gesendet werden.
+### Geschwindigkeit
+#### React
+Das erste Laden dauert 668ms.
+In React dauert es von dem Zeitpunkt, andem man auf "OK" clickt 49ms bis man das Todo in der Liste sieht.
+#### Webcomponents
+Das erste Laden dauert 344ms.
+Mit Webcomponents dauert es von dem Zeitpunkt, andem man auf "OK" clickt 42ms bis man das Todo in der Liste sieht.
+### Useability
+#### React
+React bietet von haus aus, dank features wie JSX und die reaktiven variablen eine sehr gute useability
+#### Webcomponents
+Von haus aus ist die API für Webcomponents eher kompliziert. Auch der fehlende JSX support macht die Bedienung eher schwierig. Dies sind jedoch beides Probleme die durch einfach Libraryies gelöst werden können!
