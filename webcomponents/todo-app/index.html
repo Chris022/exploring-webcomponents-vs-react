@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Driven Web Components Tutorial</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #282c34;
+            color: rgb(233, 233, 233)
+        }
+
+        code {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+                monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <script rel=preload type=module>
+        Promise.all([
+            // Components which are not effected by routing
+            import('./src/components/Button.js')    .then(module => ['wc-button', module.default]),
+            import('./src/components/Card.js')      .then(module => ['wc-card', module.default]),
+            import('./src/components/Heading.js')   .then(module => ['wc-heading', module.default]),
+            import('./src/components/Spacer.js')   .then(module => ['wc-spacer', module.default]),
+            import('./src/components/ToDo.js')   .then(module => ['wc-todo', module.default]),
+            import('./src/components/App.js')   .then(module => ['wc-app', module.default])
+        ]).then(elements => elements.forEach(element => {
+            // don't define already existing customElements
+            if (element && !customElements.get(element[0])) customElements.define(...element)
+        }))
+    </script>
+
+    <wc-app></wc-app>
+
+</body>
+
+</html>

@@ -18,9 +18,13 @@ Will man dann die App Starten kann man dies einfach mit folgendem Befehl machen
 npm run start
 ```
 
-
 ### Webcomponents
-TODO
+Um eine App mit Webcomponents aufzusetzen muss lediglich eine ```index.html``` und ```index.js``` erstellt werden. Da diese App ja nicht gebuildet werden muss kann die App einfach mit einem beliebigen server bereitgestellt werden. Zum Beispiel:
+```bash
+php -S localhost:8080
+```
+
+
 
 ## Ordnerstrucktur
 ### React
@@ -29,7 +33,7 @@ In dem Ordner ```/src``` sind die source datein der App gespiechert. Die Hauptda
 In dem Ordner ```/components``` und dessen Unterordner finden sich dann die einzelnen Komponenten aus denen sich unser App zusammensetzt.
 
 ### Webcomponents
-TODO
+Für die Webcomponents gibt es lediglich einen ```/src``` Ordner. Darin sind gibt es wiederum einen ```/components``` Ordner. In diesem sind alle Komponenten der App. Im Ordner ```prototypes``` werden abstact classen gespeichert. Die relativ komplexe Webcomponents API wird so teilweise wesentlich vereinfacht. Die Datei ```helpers.js``` beinhaltet dann noch zusätzliche funktionen welche die API weiter vereinfachen.
 
 ## Komponenten
 Die app besteht aus 6 Komponenten.
@@ -44,10 +48,13 @@ Die app besteht aus 6 Komponenten.
 In React wird jede Komponente als Funktion definiert und anschließend mit ```default export ``` exportiert. Die Funktion akzepiert dabei parameter, mit denen dinge wie onClick funktionen, text, oder sonstiges der Komponente übergeben werden könne. Auch hat die Komponente zugriff auf dessen Child elemente. So ist die ```Card``` Komponente ein einfaches ```div``` Element welches die Child Elemente der Card Komponente umschließt.
 
 ### Webcomponents
-TODO
+Mit der Webcomponents API werden objecte als Klassen definiert. Gemeinsam mit der MutationObserver API können dann attribute oder children change events abgefangen werden und die Komponente kann sich selber neu rendern. HTML muss bei Webcomponents entweder als String oder mit ```document.createElement(...)``` erstellt werden. Hier könnte man natürlich aus JSX verwenden, in dem fall müsse man aber wieder einen compile Schritt einführen, denn ich auf jeden Fall vermeiden will!
 
 ## Logic
 ### React
 React bietet die Möglichkeit, über hooks einen gewissen "State" in die App zubringen. Die beiden meist genutzten Hooks sind ```useState``` und ```useEffect```.
 Ersterer dient der erstellung von reaktiven Variablen. Also einer Variable, die, wenn sie geändert wird, ein rerendern triggert.
 Letzterer kann genutzt werden um bestimmten code Auszuführen sobald sich eine solche reaktive Variable ändert.
+
+### Webcomponents
+Die Webcomponents API gibt keine art von logic vor! Es bietet sich aber an, über standart Js Events zu kommunizieren! Theoretisch ist es aber auch ohne weiteres möglich keine Library wie BaconJS zu verwenden um reactive Variablen gemeinsam mit Webcomponents zu verwenden
